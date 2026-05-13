@@ -1,0 +1,9 @@
+years = int(input())
+
+if years >= 18:
+    if years >= 65:
+        print(f'retired age')
+    else:
+        print(f'adult')
+else:
+    print(f'kid')
