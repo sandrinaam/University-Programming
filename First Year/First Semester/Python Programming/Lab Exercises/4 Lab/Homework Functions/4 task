@@ -1,0 +1,12 @@
+# Проверка преди добавяне
+# Напишете Python функция, която приема списък и елемент като вход.
+# Функцията трябва да добави елемента към списъка само ако той вече не е наличен в него.
+
+def check_list(lst, item):
+    if item not in lst:
+        lst.append(item)
+    return lst
+
+numbers = [1, 2, 3, 4, 5]
+print(check_list(numbers, 3))
+print(check_list(numbers, 10))
