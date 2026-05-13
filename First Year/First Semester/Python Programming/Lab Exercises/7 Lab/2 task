@@ -1,0 +1,21 @@
+# TASK 2
+# Функция read_positive_int()
+# Чете от конзолата число
+# Ако не е цяло число - принтира ValueError (Invalid integer: {number})
+# Ако е негативно число - exception с "Number must be positive."
+# Ако е валидно число - връща числото (You entered a valid number: {number})
+def read_positive_integer():
+    try:
+        text = input()
+
+        number = int(text)
+
+        if number < 0:
+            raise ValueError('Number must be positive.')
+    except ValueError as e:
+        print(f'Invalid input: {e}')
+    else:
+     print(f'You entered a valid number: {number}')
+     return number
+
+read_positive_integer()
