@@ -1,0 +1,9 @@
+def product(quantity = 2 ,item = 'apple' ,price= 0.50):
+    quantity = 2
+    item = 'apple'
+    price = 0.50
+    return str(f'{quantity} {item} - ({quantity} * {price})')
+
+f = product(item = 'pear' ,quantity= 2 ,price= 0.50)
+print(f)
+
