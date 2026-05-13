@@ -1,0 +1,20 @@
+# Напишете Python функция, която приема списък с низове като вход
+# и връща кортеж, съдържащ най-късата и най-дългата дума от списъка, в този ред.
+# Ако има няколко думи с еднаква най-къса или най-дълга дължина, връща първата
+# намерена най-къса/най-дълга дума.
+
+def word_length(text):
+    longest = ''
+    for word in text:
+        if len(word) > len(longest):
+            longest = word
+
+    shortest = longest
+    for word in text:
+        if len(word) < len(shortest):
+            shortest = word
+    return shortest, longest
+
+
+l = ['hello', 'hi', 'welcome', 'to', 'python']
+print(word_length(l))
