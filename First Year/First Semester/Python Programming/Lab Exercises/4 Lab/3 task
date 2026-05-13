@@ -1,0 +1,35 @@
+figure = str(input())
+def square():
+    S = a * a
+    P = 4 * a
+    print(f'S=[{S}, P = {P}')
+def triangle():
+    S = (a * h)/ 2
+    P = a + b + c
+    print(f'S=[{S}, P = {P}')
+def right_triangle():
+    S = (a * b)/ 2
+    P = a + b + c
+    print(f'S={S}, P = {P}')
+
+if figure == 'square':
+    a = int(input())
+    print(square())
+elif figure == 'triangle':
+    a = int(input())
+    b=int(input())
+    c=int(input())
+    h=int(input())
+    print(triangle())
+elif figure == 'right triangle':
+    a= int(input())
+    b=int(input())
+    c=int(input())
+    print(right_triangle())
+
+
+
+
+
+
+
