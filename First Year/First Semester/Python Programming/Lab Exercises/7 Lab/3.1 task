@@ -1,0 +1,44 @@
+class PasswordError(Exception):
+    def __init__(self, message):
+        self.message = message
+
+    def __str__(self):
+        return self.message
+
+def validate_password(password):
+    all_errors = []
+
+    try:
+        if len(password) < 8:
+            raise PasswordError("Password must be at least 8 characters long.")
+    except PasswordError as e:
+        all_errors.append(str(e))
+
+    try:
+        if not any(c.isupper() for c in password):
+            raise PasswordError("Password must contain at least one uppercase letter.")
+    except PasswordError as e:
+        all_errors.append(str(e))
+
+    try:
+        if not any(c.islower() for c in password):
+            raise PasswordError("Password must contain at least one lowercase letter.")
+    except PasswordError as e:
+        all_errors.append(str(e))
+
+    try:
+        if not any(c.isdigit() for c in password):
+            raise PasswordError("Password must contain at least one digit.")
+    except PasswordError as e:
+        all_errors.append(str(e))
+
+    if all_errors:
+        raise PasswordError("\n".join(all_errors))
+
+try:
+    validate_password(input("Enter password: "))
+except PasswordError as e:
+    print('Invalid password.')
+    print(e)
+else:
+    print('Password created successfully.')
