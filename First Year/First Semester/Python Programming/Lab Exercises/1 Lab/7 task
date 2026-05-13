@@ -1,0 +1,13 @@
+# prochetete chislo (minuti) preobr v chasovei i minuti
+total_minutes = int(input())
+hours = total_minutes // 60
+minutes = total_minutes - hours * 60
+days = abs(total_minutes //1440)
+if total_minutes >= 1440:
+    if hours < 24:
+     print(f'{days} days, {hours} hours and {minutes} minutes')
+    else:
+     print(f'{days} days, {minutes} minutes')
+else:
+    print (f'{hours} hours, {minutes} minutes')
+
