@@ -1,0 +1,6 @@
+#print text naobratno
+w = input()
+
+reversed word == ""
+for i in range (len(w) -1 ):
+    print(i)
