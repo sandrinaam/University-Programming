@@ -1,0 +1,11 @@
+lines_count = 0
+words_count = 0
+characters_count = 0
+with open('hello.txt', 'r', encoding='utf8') as file:
+    for line in file:
+        lines_count +=1
+        words_count += len(line.split())
+        characters_count = len(line)
+        print(f'Number of lines:{lines_count}')
+        print(f'Number of words:{words_count}')
+        print(f'Number of characters:{characters_count}')
