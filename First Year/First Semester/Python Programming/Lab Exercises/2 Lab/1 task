@@ -1,0 +1,8 @@
+n = int(input())
+
+if n == 15:
+    print(f"n = 15")
+elif n < 35:
+    print(f"n < 35")
+else:
+    print('Hi')
