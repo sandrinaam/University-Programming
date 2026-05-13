@@ -1,0 +1,9 @@
+# функция quantity item price да връща string брой item - price
+def product(quantity = 2 ,item,price):
+    quantity = 2
+    item = 'apple'
+    price = 0.5
+    return quantity * price
+
+
+print(product(quantity,item,price))
