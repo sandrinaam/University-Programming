@@ -1,0 +1,115 @@
+# създайте обектно ориентирана система която управлява автомобили за отдаване по наем.
+# използваите класове, наследяване, енкапсулация и добра структурираност на кода.
+# Искаме базов клас Кола, да има свойствата id,marka,model,year, base price per day,mileage, fuel type,
+# licence category,status for availability. Класът трябва да има методи за изчисляване цена за наемане,
+# маркиране като наличен или неналичен, представяне информация на автомобила. Подкласове на кола
+# economy car -10 procenta otstupka ot bazova cena, premium + 50 procenta uvelichenie, suv + 30,
+# electric - 20
+# клас customer (ime,tel,email,license, spisuk s rezervacii) metodi proverka dali moje da naeme dadena kola,dobavqne na rezervaciq
+# klas reservation (avtomobil,klient,broi dni,kraina cena,status - 4 pending,active,completed,canceled)
+#metod za aktivirane na rezervaciq,za prikluchvane i za otkazvane na rezervaciq)
+# klas carrental upravlqva spisuka s avtomobili,klienti,rezervaciqq (avtpmpbili - metodi dobavqne i premahvane na avtomobili ,
+# pokazvame nalichni , tursene po marka i model za klienti da dobavqme klienti i da gi namirame po telefon
+# za rezervacii - suzdavame s proverka za validnost,aktivirame,prikluchvame i otkazvame rezrvacii
+from exmp import customer1
+
+
+class Car:
+    def __init__(self, id, brand, model, year, rent_per_day, mileage, fuel_type, licence_category,availability):
+        self.id = id
+        self.brand = brand
+        self.model = model
+        self.year = year
+        self.rent_per_day = rent_per_day #price vmesto rent
+        self.mileage = mileage
+        self.fuel_type = fuel_type
+        self.licence_category = licence_category
+        self.availability = "available"
+
+    def __str__(self):
+        return (f'Information:\n Brand:{self.brand}\n Model:{self.model}\n Year:{self.year}\n Rent:{self.rent_per_day}\n'
+        f' Mileage:{self.mileage}\n Fuel type:{self.fuel_type}\n Licence:{self.licence_category}\n Availability:{self.availability}')
+
+    def is_available(self):
+        return self.availability if self.availability == "available" else 'This car is not available'
+
+    def total_rent(self):
+        return self.rent_per_day
+
+class EconomyCar(Car):
+    def __init__(self, id, brand, model, year, rent_per_day, mileage, fuel_type, licence_category, availability):
+     super().__init__(id, brand, model, year, rent_per_day, mileage, fuel_type, licence_category, availability)
+
+    def rent_per_day(self):
+        rent_per_day = self.rent_per_day * 0.9
+
+        return rent_per_day
+
+class ElectricCar(Car):
+    def __init__(self, id, brand, model, year, rent_per_day, mileage, fuel_type, licence_category, availability):
+        super().__init__(id, brand, model, year, rent_per_day, mileage, fuel_type, licence_category, availability)
+
+    def rent_per_day(self):
+        rent_per_day = self.rent_per_day * 0.8
+
+        return rent_per_day
+
+class SUVCar(Car):
+    def __init__(self, id, brand, model, year, rent_per_day, mileage, fuel_type, licence_category, availability):
+        super().__init__(id, brand, model, year, rent_per_day, mileage, fuel_type, licence_category, availability)
+
+    def rent_per_day(self):
+        rent_per_day = self.rent_per_day * 1.3
+
+        return rent_per_day
+
+class PremiumCar(Car):
+    def __init__(self, id, brand, model, year, rent_per_day, mileage, fuel_type, licence_category, availability):
+        super().__init__(id, brand, model, year, rent_per_day, mileage, fuel_type, licence_category, availability)
+
+    def rent_per_day(self):
+        rent_per_day = self.rent_per_day * 1.5
+
+        return rent_per_day
+# клас customer (ime,tel,email,license, spisuk s rezervacii) metodi proverka dali moje da naeme dadena kola,dobavqne na rezervaciq
+class Customer():
+    def __init__(self,name, phone_number,email, licence,reservations = []):
+        self.name = name
+        self.phone_number = phone_number
+        self.email = email
+        self.licence = licence
+        self.reservations = reservations
+
+    def can_rent(self,car):
+        if self.licence == car.licence_category and car.availability == "available":
+            return True
+        else:
+            return False
+
+    def add_reservation(self, reservation):
+        if self.can_rent == True:
+            self.reservation.append(reservation)
+
+# klas reservation (avtomobil,klient,broi dni,kraina cena,status - 4 pending,active,completed,canceled)
+#metod za aktivirane na rezervaciq,za prikluchvane i za otkazvane na rezervaciq)
+class Reservation(Car):
+    def __init__ (self,car,customer,days_rental,total_price,availability):
+        self.car = car
+        self.customer = customer
+        self.days_rental = days_rental
+        self.total_price = total_price
+        self.availability = availability
+
+obj1 = Car(1, brand= 'audi',model='a3', year=2005, rent_per_day=200,availability='available', days_rental=2)
+print(obj1.total_rent())
+obj2 = Car(2,'vw','golf',2004,130,100000,'dizel','B','available')
+print(obj2.__str__())
+print(obj1.is_available())
+obj3 = PremiumCar(3,'mazda','x3',2010,150,30000,'benzin','B','no')
+print(obj3.rent_per_day)
+customer1 = Customer('qna','08849','qnaaa','B','1','2','B','available')
+print(customer1.can_rent())
+
+
+
+
