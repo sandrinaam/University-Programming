@@ -1,0 +1,21 @@
+class Person:
+    def greeting(self):
+        print('Hey, I am Georgi')
+
+    def sayMyAge(self):
+        print('I am 22 years old')
+
+class Student(Person):
+    def greeting(self):
+        print('Hello, I am student and my name is Georgi')
+
+    def sayMyCity(self):
+        print('I am from Sofia')
+
+p = Person()
+s = Student()
+
+p.greeting()
+s.greeting()
+p.sayMyAge()
+s.sayMyCity()
