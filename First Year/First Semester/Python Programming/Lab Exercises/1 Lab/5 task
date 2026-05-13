@@ -1,0 +1,6 @@
+# vuvede br chasove i tarifa
+# izch iprintira br zaplashtane
+hours = int(input())
+salary_per_hour = float(input())
+salary = salary_per_hour * hours
+print(salary)
