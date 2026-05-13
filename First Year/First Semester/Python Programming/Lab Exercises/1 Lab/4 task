@@ -1,0 +1,9 @@
+import math
+r = float(input())
+# lice i peimetur
+
+area = math.pi * r * r
+perimeter = 2 * r * math.pi
+print(f'{perimeter:.2f}')
+print(f'{area:.2f}')
+
