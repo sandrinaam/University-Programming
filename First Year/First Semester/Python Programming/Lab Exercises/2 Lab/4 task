@@ -1,0 +1,10 @@
+# Print vsqka bukva ot PyThoN
+from curses.ascii import isupper
+
+word = input()
+
+for i in word:
+    if isupper(i):
+        print(i)
+
+
