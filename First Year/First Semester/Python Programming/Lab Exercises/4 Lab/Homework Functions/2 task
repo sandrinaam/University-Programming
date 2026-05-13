@@ -1,0 +1,21 @@
+# Напишете Python функция, която приема низ като вход и връща речник,
+# съдържащ броя на главните и малките букви в низа.
+# Всички символи, които не могат да бъдат категоризирани като главни
+# или малки букви (напр. символи), трябва да се броят като „други“.
+
+def func(n):
+    result = {'Upper': 0, 'Lower': 0, 'Else': 0}
+
+    for char in n:
+        if char.isupper():
+            result['Upper'] += 1
+        elif char.islower():
+            result['Lower'] += 1
+        else:
+            result['Else'] += 1
+
+    return result
+
+
+text = "Hello, Python 123!"
+print(func(text))
