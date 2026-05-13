@@ -1,0 +1,28 @@
+# TASK 1
+# Чете от конзолата две стойности - a и b
+# Преобразува ги в тип float
+# Пресмята с всички действия a+b, a-b, a*b, a/b
+# Да използваме Try Except за следните случаи:
+# Ако подаде невалидно число - да принтира "Invalid input. Please enter a valid number."
+# Ако дели на нула - да принтира "Division by zero is not allowed."
+# Ако мине успешно - да принтира "Operations completed successfully."
+# Finally - End of calculations
+try:
+    a = float(input())
+    b = float(input())
+
+    print(a + b)
+    print(a - b)
+    print(a * b)
+    print(a / b)
+
+except ValueError:
+    print('Invalid input. Please enter numbers only.')
+except ZeroDivisionError:
+    print('Division by zero is not allowed.')
+else:
+    print('Operations completed successfully.')
+finally:
+    print('End of calculations')
+
+
