@@ -1,0 +1,10 @@
+# proverqva dali e palindrom funkciqta poluchava kato argument chislo brushta 0 i 1 ako e
+number = int(input())
+def palindrome(num):
+    num = str(num)
+    if num == num[::-1]:
+        return 1
+    else:
+        return 0
+
+print(palindrome(number))
