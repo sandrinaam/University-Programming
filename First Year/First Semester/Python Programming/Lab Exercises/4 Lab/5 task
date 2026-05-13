@@ -1,0 +1,34 @@
+# програма кояро реализира калкулатор за цели числа действията са + - / *
+# потребителят въжежда вида на операцията после жъжежда две числа
+# реализирайте отделни функции за отделните операции
+
+operation = str(input())
+
+def summation ():
+    a = int(input())
+    b = int(input())
+    return a + b
+
+def substraction():
+    a = int(input())
+    b = int(input())
+    return a - b
+
+def multiplication():
+    a = int(input())
+    b = int(input())
+    return a * b
+
+def division():
+    a = int(input())
+    b = int(input())
+    return a / b
+
+if operation == 'sum':
+    print(f'Sum = {summation()}')
+elif operation == 'substraction':
+    print(f'Substraction = {substraction()}')
+elif operation == 'multiplication':
+    print(f'Multiplication = {multiplication()}')
+elif operation == 'division':
+    print(f'Division = {division()}')
