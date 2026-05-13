@@ -1,0 +1,14 @@
+# на функция се подажат два аргумента първият е списък с числа и число
+# променете вс елементи от списъка със стойност по-голяма от даденото число на 0
+
+
+def elements():
+    lst = list(input())
+    n = int(input('Enter a number: '))
+if n > number in lst:
+    number in lst = 0
+     return lst
+
+print(elements())
+
+
