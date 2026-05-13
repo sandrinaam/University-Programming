@@ -1,0 +1,7 @@
+# napishete progr koqto proverqva prosti chisla   #2,3,5,
+# prosti chisla % 1 ; % n
+n = int(input())
+if n!=2 and n!= 3 and n!=5 and (n % 2 == 0 or n % 3 == 0 or n % 5 == 0):
+    print(f" Числото {n} не е просто число.")
+else:
+    print(f'Числото {n} е просто число.')
