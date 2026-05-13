@@ -1,0 +1,16 @@
+s = [1, 2, 3, 4, 5, 6]
+
+#posl element
+print(s[5])
+
+#purvi dva
+print(s[0:2])
+
+#vs bez purwi
+print(s[1::])
+
+#vs bez posleden
+print(s[4::-1])
+
+#obraten red
+print(s[::-1])
