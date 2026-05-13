@@ -1,0 +1,8 @@
+# vhod cqlo chislo a programata formira dva korteja sushtoqshti se ot cifrite v tova chislo
+#ediniqt s cifrite v prav red i vtori s cifri v obraten
+
+n = int(input())
+tuple1 = tuple(str(n))
+tuple2 = tuple((str(n)[::-1]))
+print(tuple1)
+print(tuple2)
