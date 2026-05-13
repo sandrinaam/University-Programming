@@ -1,0 +1,11 @@
+class Car:
+    def __init__(self, brand, year):
+        self.brand = brand
+        self.year = year
+
+    def print(self):
+        print(f'My car is: {self.brand}, from year {self.year}.')
+
+
+my_car = Car('Audi', 2005)
+my_car.print()
