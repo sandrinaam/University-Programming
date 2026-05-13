@@ -1,0 +1,19 @@
+# Напишете програма коята създава числов списък, той се запълва със случайни числа, след
+#което между всеки два елемента се вмъква нов равен на сумата на съседните два елемента
+
+import random
+n = int(input())
+final_list = []
+
+numbers = [random.randint(0,n) for _ in range(n)]
+print(numbers)
+
+for j in range(len(numbers)):
+        final_list.append(numbers[j])
+        final_list.append(numbers[j-1] + numbers[j])
+
+print(final_list)
+
+
+
+
