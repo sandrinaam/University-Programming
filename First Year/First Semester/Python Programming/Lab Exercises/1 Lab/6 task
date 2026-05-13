@@ -1,0 +1,7 @@
+hours = int(input())
+salary_per_hour = float(input())
+bruto_salary = salary_per_hour * hours
+netto_salary = bruto_salary * 0.87
+print(netto_salary)
+
+
